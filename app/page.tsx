@@ -1,41 +1,42 @@
-import AcmeLogo from '@/app/ui/acme-logo';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
-import { lusitana } from '@/app/ui/fonts';
-import Image from 'next/image';
-import { Button } from './ui/button';
- 
+import AcmeLogo from "@/app/ui/acme-logo";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { lusitana } from "@/app/ui/fonts";
+import Image from "next/image";
+import { Button } from "./ui/button";
+
 export default function Page() {
   return (
     <main className="flex min-h-screen flex-col p-6">
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
         <AcmeLogo />
       </div>
-      
+
       <div className="mt-8 flex flex-col md:flex-row">
         {/* 左侧内容：网站描述和按钮 */}
         <div className="md:w-2/5 md:pr-8">
           {/* 网站描述 */}
           <div className="text-left">
-            <h1 className={`text-2xl font-bold md:text-3xl ${lusitana.className}`}>
+            <h1
+              className={`text-2xl font-bold md:text-3xl ${lusitana.className}`}
+            >
               欢迎来到 Acme Dashboard
             </h1>
             <p className="mt-4 text-gray-600">
               这是一个功能强大的仪表板应用程序，帮助您管理业务数据和跟踪关键指标。
             </p>
           </div>
-          
+
           {/* 按钮区域 */}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-start">
-            <Button>
-              开始使用
-            </Button>
-            <Button>
-              了解更多
-            </Button>
+            <Link href="/dashboard">
+              <Button>开始使用</Button>
+            </Link>
+
+            <Button>了解更多</Button>
           </div>
         </div>
-        
+
         {/* 右侧内容：图片 */}
         <div className="mt-8 md:mt-0 md:w-3/5 md:pl-8">
           <div className="flex items-center justify-center p-6 md:px-28 md:py-12">
@@ -46,12 +47,12 @@ export default function Page() {
               className="hidden md:block"
               alt="Screenshots of the dashboard project showing desktop version"
             />
-            <Image 
-              src="/hero-mobile.png" 
-              width={560} 
-              height={620}   
+            <Image
+              src="/hero-mobile.png"
+              width={560}
+              height={620}
               className="block md:hidden"
-              alt="Screenshots of the dashboard project showing mobile version" 
+              alt="Screenshots of the dashboard project showing mobile version"
             />
           </div>
         </div>
